@@ -1,0 +1,29 @@
+{
+  "name": "cascrap-cli",
+  "version": "0.0.1",
+  "description": "Basic Ca Scraper",
+  "main": "./bin",
+  "bin": {
+    "cascrap-cli": "./bin/cascrap"
+  },
+  "directories": {
+    "test": "./test",
+	"bin": "./bin"
+  },
+  "dependencies": {
+    "commander": ">=1.0.0",
+	"xpath": ">=0.0.9",
+	"xmldom": ">=0.1.19",
+	"xml2js": ">=0.4.5"
+  },
+  "scripts": {
+    "test": "./bin/cascrap -h"
+  },
+  "keywords": [
+    "ca",
+    "scrap",
+	"cli"
+  ],
+  "author": "FloArc",
+  "license": "???"
+}

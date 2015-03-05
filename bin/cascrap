@@ -1,0 +1,54 @@
+#!/usr/bin/env node
+
+var program = require('commander');
+var cascrap = require('../cascrap');
+
+
+program
+  .version('0.0.1')
+  
+program
+  .command('getjson')
+  .alias('j')
+  .description('get raw json from ca')
+  .action(function(){
+    cascrap.getJson(null, function(err, json) {
+	  console.log(json);
+    });
+
+});
+
+program
+  .command('*')
+  .action(function(env){
+	
+		
+	console.log('');
+    console.log('  Enter a Valid command');
+	console.log('');
+	program.help()
+
+
+});
+
+
+program.on('--help', function(){
+
+  console.log('  Examples:');
+  console.log('');
+  console.log('    $ custom-help --help');
+  console.log('    $ custom-help -h');
+  console.log('');
+
+});
+
+program.parse(process.argv);
+
+
+/*
+if (!process.argv.slice(2).length) {
+  program.outputHelp();
+}
+*/
+  
+if (!program.args.length) program.help();
